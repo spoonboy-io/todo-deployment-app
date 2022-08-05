@@ -5,18 +5,20 @@ in a Morpheus Deployments training session.
 
 Based on the example found in [here](https://blog.logrocket.com/building-simple-app-go-postgresql/).
 
+Modified so that the external assets are part of the binary to simplify deployment.
+
 ## Setup
 
-Grab a release from the [releases page](https://github.com/spoonboy-io/todo-deployment-app/releases/latest), download and extract the binary
+Grab a release from the [releases page](https://github.com/spoonboy-io/todo-deployment-app/releases/latest), download and extract the binary.
 
-Create a Morpheus deployment with the binary 
+Create a Morpheus deployment with the binary. 
 
-Create a Morpheus script `postgres.env` in the same deployment folder as the binary which contains the single environment variable `PG_HOST`. All other connecion
-info is hardcoded in the app for simplicity. 
+Create a Morpheus script file `config.env` targeted to he same deployment folder as the binary which contains the single required environment variable `PG_HOST`. 
+All other connection info is hardcoded in the app for simplicity, but may be overridden here.
 
 ```bash
 # POSTGRES CONFIG
-PG_HOST=54.237.172.196
+PG_HOST=54.237.172.XXX
 
 # OPTIONAL TO OVERRIDE DEFAULTS
 #PG_USER=               # default is postgres
@@ -27,7 +29,7 @@ PG_HOST=54.237.172.196
 ```
 
 ## Run
-Run the application like this
+Run the application like this:
 
 ```bash
 ./todo
