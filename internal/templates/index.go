@@ -6,7 +6,7 @@ func Index() string {
 
 	// change this to demo different build
 	title := "Morpheus Todo List"
-	version := "Version 1.0.0"
+	version := "Version 0.1.0"
 	backgroundColor := "#666666"
 
 	// the template don't edit this
