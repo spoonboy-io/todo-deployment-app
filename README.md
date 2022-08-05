@@ -11,6 +11,8 @@ Modified so that the external assets are part of the binary to simplify deployme
 
 Grab a release from the [releases page](https://github.com/spoonboy-io/todo-deployment-app/releases/latest), download and extract the binary.
 
+There are two releases (v0.1.0 & v0.2.0) which have visual differences in the UI to demonstrate deployment versioning.
+
 Create a Morpheus deployment with the binary. 
 
 Create a Morpheus script file `config.env` targeted to he same deployment folder as the binary which contains the single required environment variable `PG_HOST`. 
