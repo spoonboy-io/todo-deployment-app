@@ -15,8 +15,9 @@ There are two releases (v0.1.0 & v0.2.0) which have visual differences in the UI
 
 Create a Morpheus deployment with the binary. 
 
-Create a Morpheus script file `config.env` targeted to he same deployment folder as the binary which contains the single required environment variable `PG_HOST`. 
-All other connection info is hardcoded in the app for simplicity, but may be overridden here.
+Create a Morpheus script file `config.env` which contains the single required environment variable `PG_HOST`. 
+All other connection info is hardcoded in the app for simplicity, but may be overridden here. The location of this file 
+is passed as a command line flag.
 
 ```bash
 # POSTGRES CONFIG
@@ -34,7 +35,7 @@ PG_HOST=54.237.172.XXX
 Run the application like this:
 
 ```bash
-./todo
+./todo -config={absolute path to config.env}
 ```
 
 Optionally `nohup` the call or set up as a service so tasks can be created to start and stop the app in Morpheus.

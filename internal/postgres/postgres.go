@@ -21,5 +21,3 @@ func Connect(host, user, pwd, database string) (*sql.DB, error ){
 
 	return db, nil
 }
-
-

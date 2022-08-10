@@ -5,9 +5,9 @@ import "fmt"
 func Index() string {
 
 	// change this to demo different build
-	title := "Morpheus Training Todo List"
-	version := "Version 0.2.0"
-	backgroundColor := "#037BFF"
+	title := "Todo List"
+	version := "Version 0.3.0"
+	backgroundColor := "#999999"
 
 	// the template don't edit this
 	template := `

@@ -1,12 +1,11 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"github.com/spoonboy-io/todo-deployment-app/internal/postgres"
-	//"github.com/gofiber/fiber/v2/middleware/filesystem"
 	"github.com/gofiber/template/html"
+	"github.com/spoonboy-io/todo-deployment-app/internal/postgres"
 	"github.com/spoonboy-io/todo-deployment-app/internal/routes"
-	//"net/http"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -15,7 +14,6 @@ import (
 )
 
 const (
-	CONFIG_FILE = "config.env"
 	PG_USER="postgres"
 	PG_PASSWORD="Password123?"
 	PG_DATABASE="todos"
@@ -24,9 +22,17 @@ const (
 
 var logger *koan.Logger
 
+
 func init(){
+	var configFile string
+	flag.StringVar(&configFile, "config", "config.env", "set the absolute path to config.env file")
+	flag.Parse()
+
 	// read in the config file
-	err := godotenv.Load(CONFIG_FILE)
+	msg := fmt.Sprintf("Loading config file at '%s'", configFile)
+	logger.Info(msg)
+
+	err := godotenv.Load(configFile)
 	if err != nil {
 		logger.FatalError("Failed to read config file", err)
 	}
