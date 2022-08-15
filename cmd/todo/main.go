@@ -17,6 +17,7 @@ const (
 	PG_USER="postgres"
 	PG_PASSWORD="Password123?"
 	PG_DATABASE="todos"
+	PG_PORT_DEFAULT="5432"
 	APP_PORT_DEFAULT = "8090"
 )
 
@@ -44,7 +45,10 @@ func main() {
 	if dbHost == "" {
 		logger.FatalError("No database host found", nil)
 	}
-
+	dbPort := os.Getenv("PG_PORT")
+	if dbPort == "" {
+		dbPort = PG_PORT_DEFAULT
+	}
 	dbUser := os.Getenv("PG_USER")
 	if dbUser == ""{
 		dbUser = PG_USER
@@ -58,7 +62,7 @@ func main() {
 		dbDatabase = PG_DATABASE
 	}
 
-	db, err := postgres.Connect(dbHost, dbUser, dbPassword, dbDatabase)
+	db, err := postgres.Connect(dbHost, dbPort, dbUser, dbPassword, dbDatabase)
 	if err != nil {
 		logger.FatalError("Failed to make database connection", err)
 	}

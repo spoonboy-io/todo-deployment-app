@@ -7,8 +7,9 @@ import (
 )
 
 // Connect creates connection to Postgres DB
-func Connect(host, user, pwd, database string) (*sql.DB, error ){
-	connInfo := fmt.Sprintf("host=%s port=5432 user=%s password=%s dbname=%s sslmode=disable", host, user, pwd, database)
+func Connect(host, port, user, pwd, database string) (*sql.DB, error ){
+
+	connInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, pwd, database)
 	db, err := sql.Open("postgres", connInfo)
 	if err != nil {
 		return db, err

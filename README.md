@@ -24,11 +24,11 @@ is passed as a command line flag.
 PG_HOST=54.237.172.XXX
 
 # OPTIONAL TO OVERRIDE DEFAULTS
+#PG_PORT=               # default is 5432
 #PG_USER=               # default is postgres
 #PG_PASSWORD=           # default is Password123?
 #PG_DATABASE=           # default is todos
 #APP_SERVER_PORT=       # default is 8090
-
 ```
 
 ## Run
