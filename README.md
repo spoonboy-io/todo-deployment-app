@@ -11,7 +11,7 @@ Modified so that the external assets are part of the binary to simplify deployme
 
 Grab a release from the [releases page](https://github.com/spoonboy-io/todo-deployment-app/releases/latest), download and extract the binary.
 
-There are two releases (v0.5.0 & v0.7.0) which have visual differences in the UI to demonstrate deployment versioning.
+There are two releases (v1.0.0 & v2.0.0) which have visual differences in the UI to demonstrate deployment versioning.
 
 Create a Morpheus deployment with the binary. 
 
